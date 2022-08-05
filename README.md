@@ -90,7 +90,7 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ['plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 'latest'
   },
@@ -100,13 +100,19 @@ module.exports = {
 Now , you already done to setup the project
 
 ## Last Step
-For Vscode you need these rules inside your ```settings.json``
+For Vscode you need these rules inside your ```settings.json```
 
 So when you click CTRL + S ,it will auto format
 ```
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
 ```
 Next just restart your vscode
